@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Angular JS Form</title>	
+		<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+      	
+	</head>
+
+	<body>
+		<h2>Angular JS Forms</h2>
+
+		<div ng-app="mainApp" ng-controller="shapeController">
+			<p>{{message}} <br> {{type}}</p>
+
+			<div ng-controller="circleController">
+				<p>{{message}}<br> {{type}}</p>
+			</div>
+			<div ng-controller="squareController">
+				<p>{{message}} <br> {{type}}</p>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var mainApp = angular.module("mainApp",[]);
+
+			mainApp.controller("shapeController", function($scope){
+				$scope.message = "In Shape Controller";
+				$scope.type = "Shape";
+
+			});
+
+			mainApp.controller("circleController", function($scope){
+				$scope.message = "In Circle Controller";
+				$scope.type = "Circle";
+			});
+
+			mainApp.controller("squareController", function($scope){
+				$scope.message = "In Square Controller";
+				$scope.type = "Square";
+
+			});
+		</script>
+	</body>
+</html>
